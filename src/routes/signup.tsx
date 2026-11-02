@@ -35,7 +35,7 @@ function SignUp() {
     e.preventDefault();
     setError("");
     const parsed = schema.safeParse(form);
-    if (!parsed.success) return setError(parsed.error.issues[0].message);
+    if (!parsed.success) return setError(parsed.error.issues[0]?.message ?? "Check your details");
     setBusy(true);
     const { data, error } = await supabase.auth.signUp({
       email: parsed.data.email,
