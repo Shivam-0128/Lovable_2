@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Habit data is read/written from the browser client with RLS enforcing ownership/sharing; signed-in pages live under src/routes/_authenticated/ (client-only gate). Why: simple CRUD, security lives in database policies.
